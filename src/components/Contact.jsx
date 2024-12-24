@@ -38,7 +38,7 @@ const Contact = () => {
           to_email: "shag.sin3012@gmail.com",
           message: form.message,
         },
-        public_id
+        "mV8Xepnkj6qw02WG4"
       )
       .then(
         () => {
