@@ -65,58 +65,72 @@ const technologies = [
   {
     name: "HTML 5",
     icon: html,
+    shadowColor: "rgba(255,102,0,0.7)", // Orange
   },
   {
     name: "CSS 3",
     icon: css,
+    shadowColor: "rgba(0,114,188,0.7)", // Blue
   },
   {
     name: "JavaScript",
     icon: javascript,
+    shadowColor: "rgba(247,223,30,0.7)", // Yellow
   },
   {
     name: "TypeScript",
     icon: typescript,
+    shadowColor: "rgba(0,122,204,0.7)", // Light Blue
   },
   {
     name: "React JS",
     icon: reactjs,
+    shadowColor: "rgba(97,218,251,0.7)", // Cyan
   },
   {
     name: "Redux Toolkit",
     icon: redux,
+    shadowColor: "rgba(118,74,188,0.7)", // Purple
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
+    shadowColor: "rgba(56,189,248,0.7)", // Light Cyan
   },
   {
     name: "Node JS",
     icon: nodejs,
+    shadowColor: "rgba(128,189,66,0.7)", // Green
   },
   {
     name: "MongoDB",
     icon: mongodb,
+    shadowColor: "rgba(51,160,44,0.7)", // Dark Green
   },
   {
     name: "Three JS",
     icon: threejs,
+    shadowColor: "rgba(14,98,133,0.7)", // Teal
   },
   {
     name: "git",
     icon: git,
+    shadowColor: "rgba(255, 255, 255, 0.9)", // Red
   },
   {
     name: "figma",
     icon: figma,
+    shadowColor: "rgba(244,68,58,0.7)", // Reddish Orange
   },
   {
     name: "C/C++",
     icon: c_icon,
+    shadowColor: "rgba(43,133,192,0.7)", // Deep Blue
   },
   {
     name: "Java",
     icon: java,
+    shadowColor: "rgba(244,100,35,0.7)", // Orange-Red
   },
 ];
 

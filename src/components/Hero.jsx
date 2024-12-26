@@ -4,9 +4,32 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { profile } from "../assets";
+import { useEffect, useState } from "react";
 const Hero = () => {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    // Define a media query for large screens
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+    // Set the initial state
+    setIsLargeScreen(mediaQuery.matches);
+
+    // Listener to handle changes in screen size
+    const handleMediaQueryChange = (event) => {
+      setIsLargeScreen(event.matches);
+    };
+
+    // Attach the listener
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Cleanup on component unmount
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <section className="hidden lg:block relative w-full h-screen mx-auto">
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
@@ -32,7 +55,7 @@ const Hero = () => {
           />
         </div>
       </div>
-      <ComputersCanvas />
+      {isLargeScreen && <ComputersCanvas />}
     </section>
   );
 };

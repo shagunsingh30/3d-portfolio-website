@@ -31,15 +31,15 @@ const ProjectCard = ({ project }) => {
       }
     >
       <div>
-        <h3 className="text-white text-[24px] font-bold">{project.title}</h3>
+        <h3 className="text-white lg:text-[24px] font-bold">{project.title}</h3>
         <p
-          className="text-secondary text-[16px] font-semibold"
+          className=" mt-2 text-secondary text-[16px] font-semibold"
           style={{ margin: 0 }}
         >
-          {project.title}
+          {project.technologies.join(" | ")}
         </p>
       </div>
-      <ul className="mt-5 list-disc ml-5 space-y-2">
+      <ul className="mt-5 list-disc ml-5 space-y-1 lg:space-y-2">
         {project.description.map((point, index) => (
           <li
             key={index}
@@ -50,22 +50,22 @@ const ProjectCard = ({ project }) => {
         ))}
       </ul>
       {project.demoLink && (
-        <div className="mt-5 p-4 w-[30%] rounded-lg bg-gradient-to-r from-[#1d1836] to-[#383E56] hover:from-[#383E56] hover:to-[#1d1836] transition-all duration-300">
+        <div className="mt-3 p-4 w-[30%] rounded-lg bg-gradient-to-r from-[#1d1836] to-[#383E56] hover:from-[#383E56] hover:to-[#1d1836] transition-all duration-300">
           <Link
             to={project.demoLink}
             target="_blank"
-            className="text-[#E4E4E4] text-[16px] font-semibold hover:text-[#9ac5f6]"
+            className="text-[#E4E4E4] text-[14px] font-semibold hover:text-[#9ac5f6]"
           >
             <h3>DEMO</h3>
           </Link>
         </div>
       )}
       {project.repoLink && (
-        <div className="mt-5 p-4 w-[30%] rounded-lg bg-gradient-to-r from-[#1d1836] to-[#383E56] hover:from-[#383E56] hover:to-[#1d1836] transition-all duration-300">
+        <div className="mt-3 p-4 w-[30%] rounded-lg bg-gradient-to-r from-[#1d1836] to-[#383E56] hover:from-[#383E56] hover:to-[#1d1836] transition-all duration-300">
           <Link
             to={project.repoLink}
             target="_blank"
-            className="text-[#E4E4E4] text-[16px] font-semibold hover:text-[#9ac5f6]"
+            className="text-[#E4E4E4] text-[14px] font-semibold hover:text-[#9ac5f6]"
           >
             <h3>CODE</h3>
           </Link>
@@ -81,8 +81,8 @@ const Projects = () => {
         variants={textVariant()}
         className="flex flex-col justify-center items-center"
       >
-        <p className={styles.sectionSubText}>WHAT I HAVE DONE SO FAR.</p>
-        <h2 className={styles.sectionHeadText}>PROJECTS</h2>
+        <p className={`${styles.sectionSubText}`}>WHAT I HAVE DONE SO FAR.</p>
+        <h2 className={`${styles.sectionHeadText}`}>PROJECTS</h2>
       </motion.div>
       <div className="mt-10 flex flex-col">
         <VerticalTimeline>

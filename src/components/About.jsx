@@ -7,10 +7,11 @@ import { SectionWrapper } from "../hoc";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-
+import { profile } from "../assets";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -55,18 +56,36 @@ const About = () => {
         eager to take on challenges and bring ideas to life. Let’s create
         something great together!
       </motion.p>
-      <div className="mt-5 p-4 w-[30%] rounded-lg bg-gradient-to-r from-[#1d1836] to-[#383E56] hover:from-[#383E56] hover:to-[#1d1836] transition-all duration-300">
-        <Link
-          to={
-            "https://drive.google.com/file/d/1P4qMcIcCitT6M46FY9cfoYyeeJOnRPoB/view?usp=sharing"
-          }
-          target="_blank"
-          className="text-[#E4E4E4] text-[16px] font-semibold hover:text-[#9ac5f6]"
-        >
-          <h3>RESUME</h3>
-        </Link>
+      <div className="flex flex-row gap-5">
+        <div className="mt-5 p-4 lg:w-[20%] rounded-lg bg-gradient-to-r from-[#5c3fe9] to-[#383E56] hover:from-[#383E56] hover:to-[#1d1836] transition-all duration-300">
+          <Link
+            to={
+              "https://drive.google.com/file/d/1P4qMcIcCitT6M46FY9cfoYyeeJOnRPoB/view?usp=sharing"
+            }
+            target="_blank"
+            className="text-[#E4E4E4] text-[16px] font-semibold hover:text-[#9ac5f6]"
+          >
+            <h3>RESUME</h3>
+          </Link>
+        </div>
+        <div className="lg:hidden mt-5 p-4 sm:w-[30%] rounded-lg bg-gradient-to-r from-[#5c3fe9] to-[#383E56] hover:from-[#383E56] hover:to-[#1d1836] transition-all duration-300">
+          <ScrollLink
+            to={"Contact"}
+            className="text-[#E4E4E4] text-[16px] font-semibold hover:text-[#9ac5f6]"
+          >
+            <h3>Contact Me!</h3>
+          </ScrollLink>
+        </div>
       </div>
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="lg:hidden h-[400px] md:h-[600px]">
+        <img
+          src={profile}
+          alt="profile"
+          className=" mt-20 rounded-xl w-full h-full object-cover saturate-150 mx-auto brightness-100 md:border-2 md:border-violet-300 shadow-[15px_20px_15px_rgba(128,0,128,0.3)]"
+        />
+      </div>
+
+      <div className="mt-20 flex flex-wrap gap-10 justify-evenly">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
